@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    cupones
+
+    {{ super }}
+{% endblock %} 
+    
+{% block content %}
+    <form action="" method="POST">
+        <label for="Ingresar codigo">Ingresar codigo</label>
+        <input type="text" name="Ingresar codigo" {% if piano %} value="{{ piano.1 }}" {% endif %}/>
+
+
+        <input type="submit" value="Acceder" />
+    </form>    
+{% endblock %}  
+     

@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Inicio
+{% endblock %}
+
+{% block content %}
+    <h1>Catalogo de tortas</h1>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message alert-success">
+                {{message}}
+            </div>   
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    
+    
+    <p><br>
+       <h2>Listado de tortas</h2>
+    </p>
+
+    
+    <ul>
+        {% for tortas in tortas %}
+            <li>{{tortas}}</li>
+        {% endfor %}  
+    </ul>      
+
+    {#
+        {{dato1}}
+        {{dato2}}
+        {{lista}}
+    #}
+    
+    <p><br>
+        <h3>Listado de pasteles</h3>
+    </p>
+
+     <ul>
+        {% for pasteles in pasteles %}
+            <li>{{pasteles}}</li>
+        {% endfor %}  
+    </ul> 
+
+    {#
+        {{datos1}}
+        {{datos2}}
+        {{listas}}
+    #}
+
+{% endblock %}  
+     

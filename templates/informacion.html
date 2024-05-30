@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Flask
+{% endblock %}   
+  
+{% block content %}
+
+<h1>Informacion de productos</h1>
+<p><br>Pasteles</p>
+
+<br>
+<h1>{{texto}}</h3>
+
+    <form action="" method="POST">
+        <label for="tortas">Tortas</label>
+        <input type="text" name="tortas" {% if torta %} value="{{ torta.1 }}" {% endif %}/>
+
+        <label for="pasteles">Pasteles</label>
+        <input type="text" name="pasteles" {% if pasteles %} value="{{ pasteles.2 }}" {% endif %}/>
+
+        <label for="precio">Precio</label>
+        <input type="number" name="precio" {% if torta %} value="{{ torta.3 }}" {% endif %}/>
+
+        <label for="ciudad">Ciudad</label>
+        <input type="text" name="ciudad" {% if torta %} value="{{ torta.4 }}" {% endif %}/>
+
+        <input type="submit" value="Guardar" />
+    </form>    
+{% endblock %}  
+   

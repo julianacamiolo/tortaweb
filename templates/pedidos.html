@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Pedidos
+{% endblock %}  
+  
+{% block content %}
+
+    <form action="" method="POST">
+        <label for="Enviar consulta">Enviar consulta</label>
+        <input type="text" name="Enviar consulta" {% if torta %} value="{{ torta.1 }}" {% endif %}/>
+
+        <label for="@email">@email</label>
+        <input type="text" name="@email" {% if torta %} value="{{ torta.2 }}" {% endif %}/>
+
+        <label for="password">password</label>
+        <input type="text" name="password" {% if torta %} value="{{ torta.3 }}" {% endif %}/>
+
+
+        <input type="submit" value="Enviar" />
+    </form>     
+{% endblock %}  
+     

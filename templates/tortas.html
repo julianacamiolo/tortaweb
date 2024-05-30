@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Listado de tortas
+{% endblock %}
+
+{% block content %}
+    
+    <h1>Tortas</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="message alert-success">
+                   {{message}}
+                </div>   
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% for torta in tortas %}
+        <article class= "article-item"> 
+            <div class= "data">
+                <h2>
+                    <a href="{{ url_for('tortas', torta_id=torta.0) }}">
+                        {{torta.0}}
+                    </a>
+                </h2>
+                <span class = "date"> {{torta.1}}  {{torta.2}}</span>
+                <p>{{torta.3}}</p>
+                <p>
+                    <a href="{{ url_for('editar_torta', torta_id=torta.0) }}" class="btn btn-warning">Editar</a>
+                    <a href="{{ url_for('borrar_torta', torta_id=torta.0) }}" class="btn">Eliminar</a>
+                </p>    
+            </div>   
+            <div class= "clearfix"></div>
+        </article>
+    {% endfor %}    
+
+{% endblock %}

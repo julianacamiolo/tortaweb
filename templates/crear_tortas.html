@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Crear tortas
+{% endblock %}
+
+{% block content %}
+    {% if torta %}
+        <h1>Editar torta {{ torta.1 }} {{ torta.2 }}</h1>
+    {% else %}
+        <h1>Crear tortas</h1>
+    {% endif %}    
+
+    <form action="" method="POST">
+        <label for="tortas">Tortas</label>
+        <input type="text" name="tortas" {% if torta %} value="{{ torta.1 }}" {% endif %}/>
+
+        <label for="pasteles">Pasteles</label>
+        <input type="text" name="pasteles" {% if pasteles %} value="{{ pasteles.2 }}" {% endif %}/>
+
+        <label for="precio">Precio</label>
+        <input type="number" name="precio" {% if torta %} value="{{ torta.3 }}" {% endif %}/>
+
+        <label for="ciudad">Ciudad</label>
+        <input type="text" name="ciudad" {% if torta %} value="{{ torta.4 }}" {% endif %}/>
+
+        <input type="submit" value="Guardar" />
+    </form>    
+{% endblock %}
